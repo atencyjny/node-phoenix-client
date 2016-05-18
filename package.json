@@ -1,0 +1,25 @@
+{
+  "name": "node-phoenix-client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atencyjny/node-phoenix-client.git"
+  },
+  "author": "atencyjnyniebieskipasek",
+  "homepage": "https://github.com/atencyjny/node-phoenix-client#readme",
+  "keywords": [
+    "mirkoczat"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atencyjny/node-phoenix-client/issues"
+  },
+  "dependencies": {
+    "ws": "^1.1.0"
+  }
+}
