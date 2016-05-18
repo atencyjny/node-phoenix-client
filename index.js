@@ -75,6 +75,9 @@ Mirkoczat.prototype.connect = function(callback) {
 				me.emit('global');
 				console.log('info:global');
 				break;
+			case 'info:user':
+				me.emit('user', payload);
+				console.log('info:user');
 			case 'heartbeat':
 				console.log('heartbeat');
 				ws.send(JSON.stringify({
