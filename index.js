@@ -21,12 +21,12 @@ Mirkoczat.prototype.connect = function(callback) {
 
 	ws.on('error', (error) => {
 		me.emit('error', error);
-		console.log(error);
+		//console.log(error);
 	});
 
 	ws.on('close', (code, message) => {
 		me.emit('close', code, message);
-		console.log('close')
+		//console.log('close');
 	});
 
 	ws.on('message', (data, flags) => {
@@ -38,53 +38,53 @@ Mirkoczat.prototype.connect = function(callback) {
 		switch(event) {
 			case 'phx_join':
 				me.emit('phx_join', payload);
-				console.log('phx_join');
+				//console.log('phx_join');
 				break;
 			case 'phx_reply':
 				me.emit('phx_reply', payload);
-				console.log('phx_reply');
+				//console.log('phx_reply');
 				break;
 			case 'join':
 				callback(); // !!!!
 				me.emit('join', payload);
-				console.log('join');
+				//console.log('join');
 				break;
 			case 'msg:send':
 				me.emit('message', payload);
-				console.log('msg:send');
+				//console.log('msg:send');
 				break;
 			case 'msg:priv':
 				me.emit('priv', payload);
-				console.log('msg:priv');
+				//console.log('msg:priv');
 				break;
 			case 'info:cmd':
 				me.emit('info', payload);
-				console.log('info:cmd');
+				//console.log('info:cmd');
 				break;
 			case 'info:enter':
 				me.emit('enter', payload);
-				console.log('info:enter');
+				//console.log('info:enter');
 				break;
 			case 'info:leave':
 				me.emit('leave', payload);
-				console.log('info:leave');
+				//console.log('info:leave');
 				break;
 			case 'info:room':
 				this.room = payload;
 				me.emit('room');
-				console.log('info:room');
+				//console.log('info:room');
 				break;
 			case 'info:global':
 				this.global = payload;
 				me.emit('global');
-				console.log('info:global');
+				//console.log('info:global');
 				break;
 			case 'info:user':
 				me.emit('user', payload);
-				console.log('info:user');
+				//console.log('info:user');
 				break;
 			case 'heartbeat':
-				console.log('heartbeat');
+				//console.log('heartbeat');
 				ws.send(JSON.stringify({
 					topic: "phoenix",
 					event: "heartbeat",
@@ -94,10 +94,10 @@ Mirkoczat.prototype.connect = function(callback) {
 				break;
 			case 'msg:plus':
 				me.emit('plus', payload);
-				console.log('msg:plus');
+				//console.log('msg:plus');
 				break;
 			default:
-				console.log('none ' + event);
+				//console.log('none ' + event);
 		}
 	});
 
