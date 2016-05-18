@@ -50,8 +50,12 @@ Mirkoczat.prototype.connect = function(callback) {
 				console.log('join');
 				break;
 			case 'msg:send':
-				me.emit('message', payload);
+				me.emit('message', payload);msg:priv
 				console.log('msg:send');
+				break;
+			case 'msg:priv':
+				me.emit('priv', payload);
+				console.log('msg:priv');
 				break;
 			case 'info:cmd':
 				me.emit('info', payload);
